@@ -1,0 +1,24 @@
+<%= form_for @micropost do |f|  %>
+<%= "<div style='color: red;'>#{@micropost.errors.full_messages.first}</div>".html_safe if @micropost.errors.any? %>
+  <div>
+    Content:
+    <%= f.text_field :content %>
+  </div>
+  <div>
+    Id user:
+    <%= f.text_field :user_id %>
+  <%
+=begin%>
+ <%= f.select(:user_id, [
+    "<% @users.each do |user| %>
+      <%= user.id %>
+    <% end %>"
+    ])
+  %>
+<%
+=end%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

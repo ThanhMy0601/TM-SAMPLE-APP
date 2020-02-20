@@ -1,0 +1,15 @@
+<style>
+.title{
+  font-size: 18px; font-weight: bold;
+}
+</style>
+<h1>SHOW</h1>
+<br>
+<div>
+  <span class="title">Content: </span><%= @micropost.content %>
+</div>
+<br>
+<div>
+  <span class="title">Id user: </span><%= @micropost.user_id %>
+</div>
+<div class="title"><%= link_to  "Back to index", controller: "microposts", action: "index" %></div>

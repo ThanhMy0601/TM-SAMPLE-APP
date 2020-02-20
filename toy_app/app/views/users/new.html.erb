@@ -1,0 +1,24 @@
+<%= form_for @user do |f|  %>
+<%= "<div style='color: red;'>#{@user.errors.full_messages.first}</div>".html_safe if @user.errors.any? %>
+  <div>
+    <%
+=begin%>
+<%= f.label :name %>
+<%
+=end%>
+    Name:
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%
+=begin%>
+<%= f.label :email %>
+<%
+=end%>
+    Email:
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
