@@ -1,0 +1,21 @@
+<% @users.each do |user| %>
+  <li id="user-<%= user.id %>">
+    <%= link_to gravatar_for(user, size: 50), user %>
+    <span class="user"><%= link_to user.name, user %></span> |
+    <span class = "timestamp">
+      <%= link_to "delete", current_user.active_relationships.find_by(followed_id: user.id), method: :delete, data: { confirm: "You sure?" } %>
+    </span>
+  </li>
+<% end %>
+
+<%
+=begin%>
+ <li id="user-<%= user.id %>">
+  <%= link_to gravatar_for(user, size: 50), user %>
+  <span class="user"><%= link_to user.name, user %></span> |
+  <span class = "timestamp">
+    <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
+  </span>
+</li>
+<%
+=end%>
